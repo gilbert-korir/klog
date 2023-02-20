@@ -11,7 +11,7 @@
 
     <div class="card mt-4">
         <div class="card-header">
-            <h4 class="">Add Category</h4>
+            <h4 class="">Edit Category</h4>
         </div>
             <div class="card-body">
 
@@ -24,15 +24,17 @@
                 @endif
 
 
-                    
 
-                    <form action="{{ url('admin/add-category') }}" method="POST" enctype="multipart/form-data">
+
+                    <form action="{{ url('admin/update-category/'.$category->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
+
+                        @method('PUT')
 
                         <div class="mb-3">
 
                             <label for="">Category Name</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" value="{{  }}" class="form-control">
                         </div>
                         <div class="mb-3">
 
