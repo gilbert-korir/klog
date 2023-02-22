@@ -18,6 +18,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 
+    {{-- Summernote CSS Link --}}
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
 
 </head>
 <body>
@@ -36,8 +40,23 @@
         </div>
     </div>
 
+        <script src="{{ asset('assets/js/jquery-3.6.0.min.js')  }}"></script>
+
+
     <script src="{{ asset('asset/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('asset/js/scripts.js') }}"></script>
+
+    {{-- Summernote CSS Link --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#ySummernote").summernote({
+                height: 150,
+            });
+
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
 
 
 

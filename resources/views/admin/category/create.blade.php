@@ -24,7 +24,7 @@
                 @endif
 
 
-                    
+
 
                     <form action="{{ url('admin/add-category') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -42,7 +42,7 @@
                         <div class="mb-3">
 
                             <label for="">Description</label>
-                            <textarea name="description" rows="5" class="form-control"> </textarea>
+                            <textarea name="description" rows="5" id="mySummernote" class="form-control"> </textarea>
                         </div>
                         <div class="mb-3">
 
