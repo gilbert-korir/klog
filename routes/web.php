@@ -36,6 +36,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
     Route::get('posts', [App\Http\Controllers\PostController::class, 'index']);
     Route::get('add-post', [App\Http\Controllers\PostController::class, 'create']);
     Route::post('add-post', [App\Http\Controllers\PostController::class, 'store']);
-
-
+    Route::get('post/{post_id}', [App\Http\Controllers\PostController::class, 'edit']);
+    Route::put('update-post/{post_id}',[App\Http\Controllers\Admin\CategoryController::class, 'update']);
+    Route::get('delete-post/{post_id}',[App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 });
