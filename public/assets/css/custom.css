@@ -1,0 +1,10 @@
+.bg-green {
+    background-color: #04aa6d !important;
+}
+
+.navbar {
+    color: #fff !important;
+    font-weight: 600;
+    border-right: 1px solid;
+    padding: 8px 18px !important;
+}
