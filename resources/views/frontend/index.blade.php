@@ -38,6 +38,9 @@
 
                 @endforelse
 
+                <div class="your-paginate mt-4">
+                    {{ $post->links() }}
+                </div>
 
             </div>
             <div class="col-md-3">
