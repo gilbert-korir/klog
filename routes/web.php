@@ -19,7 +19,10 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/home', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+Route::get('tutorial/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
+
 
 
 
