@@ -1,56 +1,36 @@
 @extends('layouts.app')
 
+@section('title', "My Blog")
+@section('meta_description', "My Blog")
+@section('meta_keyword', "My Blog")
 
 @section('content')
 
-<div class="py-5">
+<div class="bg-danger py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
+                <div class="owl-carousel category-carousel owl-theme">
 
-                <div class="category-heading">
-                    <h4>{{ $category->name }}</h4>
-                </div>
+                    @foreach ($all_categories as $all_cate_item)
+                    <div class="item">
 
-                    @forelse ($post as $postitem )
+                        <a href="{{ url('tutorial/'.$all_cate_item->slug) }}" class="text-decoration-none">
+                        <div class="card">
+                            <img src="{{ asset('uploads/category/'.$all_cate_item->image) }}" alt="Image">
+                            <div class="card-body text-center">
+                                <h5 class="text-dark">{{ $all_cate_item->name }}</h5>
+                            </div>
+                        </div>
+                    </a>
 
-
-                <div class="card_card-shadow mt-4">
-                    <div class="card-body">
-                        <a href="{{ url('tutorial/'.$category->slug.'/'.$postitem->slug) class="text-decoration-none"}}">
-                            <h2 class="post-heading">{{ $postitem->name }}</h2>
-                        </a>
-                        <h6>
-                            Posted On: {{ $postitem->created_at->format('d-m-Y') }}
-                            <span class="ms-3">Posted By: {{ $postitem->created_at->user->name }}</span>
-                    </h6>
                     </div>
-                </div>
-
-                @empty
-
-                <div class="card_card-shadow mt-4">
-                    <div class="card-body">
-                        <h1>NO Post Available</h1>
-                    </div>
-                </div>
-
-                @endforelse
-
-                <div class="your-paginate mt-4">
-                    {{ $post->links() }}
-                </div>
-
-            </div>
-            <div class="col-md-3">
-                <div class="border p-2">
-                    <h4>Advertising Area</h4>
-                </div>
+                    @endforeach
+                 </div>
             </div>
         </div>
     </div>
-
 </div>
 
 @endsection

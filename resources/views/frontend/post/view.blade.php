@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
 
 <div class="py-5">
@@ -32,6 +31,21 @@
                 </div>
                 <div class="border p-2 my-2">
                     <h4>Advertising Area</h4>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h4>Latest Posts</h4>
+                    </div>
+                    <div class="card-body">
+                        @foreach ($latest_posts as $latest_post_item)
+
+
+                            <a href="{{ url('tutorial/'.$latest_post_item->category->slug.'/'.$latest_post_item->slug) }}" class="text-decoration-none">
+                                <h6> > {{ $latest_post_item->name }}</h6>
+                            </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

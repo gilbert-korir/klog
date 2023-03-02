@@ -11,7 +11,8 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $all_categories = Category::where('status', '0')->get();
+        return view('frontend.index', compact('all_categories'));
     }
 
     public function viewCategoryPost(string $category_slug)
@@ -34,7 +35,8 @@ class FrontendController extends Controller
         if($category)
         {
             $post = Post::where('category_id', $category->id)->where('slug', $post_slug)->where('status', '0')->first();
-            return view('frontend.post.view', compact('post'));
+            $latest_posts = Post::where('category_id', $category->id)->where('status', '0')->orderBy('created_at','DESC')->get()->take(15);
+            return view('frontend.post.view', compact('post','latest_posts'));
         }
         else
         {
