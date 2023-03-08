@@ -12,7 +12,7 @@
                     <h4>{!! $post->name !!}</h4>
                 </div>
                 <div class="mt-3">
-                     <h6>{{ $post->category->name .'/'. 4post->name}}</h6>
+                     <h6>{{ $post->category->name.'/'.$post->name}}</h6>
                 </div>
 
 
