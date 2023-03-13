@@ -8,6 +8,10 @@
             <a class="nav-link" href="login.html">Login</a>
             <a class="nav-link" href="register.html">Register</a>
             <a class="nav-link" href="password.html">Forgot Password</a>
+            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout_form').submit();">Logout</a>
+            <form id="logout_form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+            </form>
         </nav>
     </div>
     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
